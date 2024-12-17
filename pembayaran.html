@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #28a745;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-pay {
+            background-color: #28a745;
+            color: white;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-pay:hover {
+            background-color: #1e7e34;
+        }
+
+        .modal-content {
+            text-align: center;
+            border: none;
+        }
+
+        .modal-body i {
+            font-size: 60px;
+            color: #28a745;
+        }
+
+        .modal-body h5 {
+            margin-top: 20px;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .btn-continue {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-continue:hover {
+            background-color: #1e7e34;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <i class="fas fa-arrow-left"></i> Pembayaran
+    </div>
+
+    <div class="container mt-4">
+        <!-- Ringkasan Pembayaran -->
+        <div class="summary-box mb-3 p-3 border border-success rounded">
+            <div class="d-flex justify-content-between">
+                <span>Subtotal</span>
+                <span>Rp. 40.000</span>
+            </div>
+            <hr>
+            <div class="d-flex justify-content-between fw-bold text-success">
+                <span>Total</span>
+                <span>Rp. 40.000</span>
+            </div>
+        </div>
+
+        <!-- Metode Pembayaran -->
+        <div class="payment-methods">
+            <h5>Pilih Pembayaran</h5>
+            <p>Pembayaran dapat melalui Dompet Digital (OVO, Shopee pay), dan Akun Virtual (Mandiri, BCA, BRI).</p>
+            <hr>
+
+            <h5>Bayar dengan Akun Virtual</h5>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="paymentMethod" id="bca" value="bca">
+                <label class="form-check-label" for="bca">
+                    <img src="https://storage.googleapis.com/a1aa/image/zcFjQj5S0z5YGNnfbbasTKJtheC5XB4fYiQnjoRuveUfuDdfE.jpg" alt="BCA logo" width="20"> BCA Virtual Account
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="paymentMethod" id="bri" value="bri">
+                <label class="form-check-label" for="bri">
+                    <img src="https://storage.googleapis.com/a1aa/image/V2Pi7lTC8yJYJdEswYF1I6ZtTbmmYZoERReHRhBLi0P8O09JA.jpg" alt="BRI logo" width="20"> BRI Virtual Account
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="paymentMethod" id="mandiri" value="mandiri">
+                <label class="form-check-label" for="mandiri">
+                    <img src="https://storage.googleapis.com/a1aa/image/7LKefIeiRFHf8RXHQ7S4Bue7UM0VaunG4tTf8UQKHl77cH6eJA.jpg" alt="Mandiri logo" width="20"> Mandiri Virtual Account
+                </label>
+            </div>
+            <hr>
+
+            <h5>Bayar dengan Dompet Digital</h5>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="paymentMethod" id="dana" value="dana">
+                <label class="form-check-label" for="dana">
+                    <img src="https://storage.googleapis.com/a1aa/image/Ttl69YugI3p9IdBleDBVzB7CvKZlSVaMK59oVqnitPM6O09JA.jpg" alt="Dana logo" width="20"> Dana
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="paymentMethod" id="ovo" value="ovo">
+                <label class="form-check-label" for="ovo">
+                    <img src="https://storage.googleapis.com/a1aa/image/OhgFdGS53OoANB1cLzpRLr4XDbnNnIf01Bt2LFJXCH48O09JA.jpg" alt="OVO logo" width="20"> OVO Cash
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="paymentMethod" id="shopee" value="shopee">
+                <label class="form-check-label" for="shopee">
+                    <img src="https://storage.googleapis.com/a1aa/image/VzUXFqdd7xqhDF4E4GiMS0NpKROf9fZKefsJEJRShBkX3huPB.jpg" alt="Shopee Pay logo" width="20"> Shopee Pay
+                </label>
+            </div>
+            <hr>
+
+            <h5>Bayar di Tempat</h5>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="paymentMethod" id="cod" value="cod">
+                <label class="form-check-label" for="cod">Bayar di Tempat (COD)</label>
+            </div>
+        </div>
+
+        <!-- Tombol Pembayaran -->
+        <button class="btn-pay" data-bs-toggle="modal" data-bs-target="#paymentSuccessModal">Bayar Sekarang</button>
+    </div>
+
+    <!-- Modal Notifikasi Pembayaran -->
+    <div class="modal fade" id="paymentSuccessModal" tabindex="-1" aria-labelledby="paymentSuccessLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <i class="fas fa-check-circle"></i>
+                    <h5 class="mt-3">Pembayaran Berhasil!</h5>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button class="btn-continue" onclick="window.location.href='notifikasi.html'">Lanjutkan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

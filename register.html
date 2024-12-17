@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Sayuranku</title>
+    <link rel="icon" href="images/logosayur2.png" type="image/png">
+    <link rel="stylesheet" href="login-styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logosayur1.png" alt="Sayuranku Logo" height="40">
+        </div>
+    </header>
+    <main class="form-container">
+        <h2>Register</h2>
+        <form id="registerForm" onsubmit="handleRegister(event)">
+            <label for="fullname">Nama Lengkap:</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Masukkan nama lengkap" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Masukkan email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Masukkan password" required>
+
+            <label for="confirmPassword">Konfirmasi Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Konfirmasi password" required>
+            
+            <button type="submit">Register</button>
+            <p>Sudah punya akun? <a href="login.html">Login</a></p>
+        </form>
+    </main>
+    <script>
+        function handleRegister(event) {
+            event.preventDefault();
+            const fullname = document.getElementById("fullname").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (password !== confirmPassword) {
+                alert("Password dan konfirmasi password tidak cocok!");
+            } else {
+                alert("Registrasi Berhasil!");
+                window.location.href = "login.html";
+            }
+        }
+    </script>
+</body>
+</html>

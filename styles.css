@@ -1,0 +1,152 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  margin-top: 80px; /* Adjust for fixed header */
+}
+
+/* Header Styles */
+header {
+  z-index: 10;
+}
+
+header .logo h2 {
+  margin: 0;
+}
+
+header nav ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+header nav ul li {
+  display: inline;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+header nav ul li a:hover {
+  color: #28a745; /* Green on hover */
+}
+
+header .d-flex .btn-outline-success,
+header .d-flex .btn-success {
+  margin-left: 10px;
+}
+
+/* Hero Section */
+section {
+  padding-top: 80px; /* Adjust for fixed header */
+  padding-bottom: 60px;
+}
+
+section h1 {
+  font-size: 36px;
+  color: #28a745;
+  font-weight: 700;
+}
+
+section p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+}
+
+section img {
+  max-width: 100%;
+  margin-top: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Produk Section */
+.card {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  border-radius: 8px 8px 0 0;
+  object-fit: cover;
+  height: 200px;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-body h5 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.card-body p {
+  font-size: 18px;
+  color: #777;
+}
+
+.card-body .btn {
+  background-color: #28a745;
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 8px 20px;
+  text-transform: uppercase;
+}
+
+.card-body .btn:hover {
+  background-color: #218838;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #28a745;
+  color: white;
+  padding: 20px 0;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer .fab {
+  font-size: 24px;
+}
+
+footer .fab:hover {
+  color: #fff;
+  opacity: 0.7;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 767px) {
+  header nav ul {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  header nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .card {
+    margin-bottom: 20px;
+  }
+
+  .card-body h5 {
+    font-size: 18px;
+  }
+
+  .card-body p {
+    font-size: 16px;
+  }
+}
